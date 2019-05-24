@@ -1,4 +1,4 @@
-# Assebler-pattern-example
+# Assembler-pattern-example
 This is example of using assembler pattern in practice.
 
 ```
