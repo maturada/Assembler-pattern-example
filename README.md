@@ -1,6 +1,27 @@
 # Assembler-pattern-example
 This is example of using assembler pattern in practice.
 
+## Register component:
+
+```
+final class SomeComponent: ComponentAssembler {
+
+    func register(to registry: AssemblerRegistry) {
+    
+        registry.register(score: .strong) { factory in -> ServiceProtocol {
+        
+            DefaultServiceImplementation(
+                dep1: factory.resolve(),
+                 dep2Protocol: factory.resolve(ExpectedDefaultImplementionOfProtocol.self))
+        }
+    }
+}
+```
+### Resolve:
+- resolve() return a first `object of a type` that is expected in order to instatiate that class/object.
+- resolve() return a first `specific object` form the container of a type that is expected in order to instatiate that class/object.
+
+## *Interface:*
 ```
 // One assembler that exists for an app.
 // Injecting set of assembler components
@@ -34,3 +55,14 @@ protocol ComponentAssembler: class {
     func register(to registry: AssemblerRegistry)
 }
 ```
+### Scope
+```
+enum Scope {
+
+    case strong
+    case weak
+}
+```
+
+- registry with weak scope after finishing configuration releasing reference from the conitaner.
+- registy with strong scope keep reference in the container on configuration.
