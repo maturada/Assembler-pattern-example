@@ -19,7 +19,7 @@ final class SomeComponent: ComponentAssembler {
 ```
 ### Resolve:
 - resolve() return a first `object of a type` that is expected in order to instatiate that class/object.
-- resolve() return a first `specific object` form the container of a type that is expected in order to instatiate that class/object.
+- resolve() return a first `specific object` that is passed to the method as you can have mulitple implemention of a protocol in the container.
 
 ## *Interface:*
 ```
