@@ -1,9 +1,10 @@
+![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)
 # Assembler-pattern-example
 This is example of using assembler pattern in practice.
 
 ## Register component:
 
-```
+```Swift
 final class SomeComponent: ComponentAssembler {
 
     func register(to registry: AssemblerRegistry) {
@@ -22,7 +23,7 @@ final class SomeComponent: ComponentAssembler {
 - resolve() return a first `specific object` that is passed to the method as you can have mulitple implemention of a protocol in the container.
 
 ## *Interface:*
-```
+```Swift
 // One assembler that exists for an app.
 // Injecting set of assembler components
 // that are being register on configure().
@@ -56,7 +57,7 @@ protocol ComponentAssembler: class {
 }
 ```
 ### Scope
-```
+```Swift
 enum Scope {
 
     case strong
